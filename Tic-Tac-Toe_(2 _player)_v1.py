@@ -8,9 +8,9 @@ board={'7':' ','8':' ','9':' ',
 def display_board():
     global board
     print(board['7']+'|'+board['8']+'|'+board['9']+'\n'+
-          '-----'+'\n'+
+          '-+-+-'+'\n'+
           board['4']+'|'+board['5']+'|'+board['6']+'\n'+
-          '-----'+'\n'+
+          '-+-+-'+'\n'+
           board['1']+'|'+board['2']+'|'+board['3'])
 
 # Game Rule
@@ -69,9 +69,9 @@ def player2_win():
         player2_state = None
 
 def tie():
-    while ' ' not in board.values() and player1_state == None and player2_state == None:
+    if ' ' not in board.values() and player1_state == None and player2_state == None:
         print('Tie')
-        break
+        exit()
 
 # Play
 def play1():
@@ -81,13 +81,13 @@ def play1():
 
         print('Choose your grid. 1-9'+'\n'+
               '7|8|9'+'\n'+ 
-              '-----'+'\n'+
+              '-+-+-'+'\n'+
               '4|5|6'+'\n'+
-              '-----'+'\n'+
+              '-+-+-'+'\n'+
               '1|2|3')
     
         while True:
-            player1_input = input('Player 1:')
+            player1_input = input('Player 1: ')
 
             if board[str(player1_input)] != ' ':
                 print('Already picked, choose another.')
@@ -107,13 +107,13 @@ def play2():
 
         print('Choose your grid. 1-9'+'\n'+
               '7|8|9'+'\n'+ 
-              '-----'+'\n'+
+              '-+-+-'+'\n'+
               '4|5|6'+'\n'+
-              '-----'+'\n'+
+              '-+-+-'+'\n'+
               '1|2|3')
     
         while True:
-            player2_input = input('Player 2:')
+            player2_input = input('Player 2: ')
 
             if board[str(player2_input)] != ' ':
                 print('Already picked, choose another.')
