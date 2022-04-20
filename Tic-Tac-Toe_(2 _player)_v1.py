@@ -98,7 +98,6 @@ def play1():
                 player1_win()
                 tie()
                 play2()
-                break
 
 def play2():
     player2_X ='X'
@@ -124,7 +123,6 @@ def play2():
                 player2_win()
                 tie()
                 play1()
-                break
 
 def game():
     play1()
